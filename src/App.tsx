@@ -4,7 +4,7 @@ import ProductCard from "./components/ProductCard";
 import CreateProductForm from "./components/CreateProductForm";
 import UpdateProductForm from "./components/UpdateProductForm";
 
-import type { Product } from "./types/product";
+import type { Product } from "./types/product.ts";
 
 type CreateProduct = {
   name: string;
