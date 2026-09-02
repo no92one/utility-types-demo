@@ -1,0 +1,447 @@
+/* =========================
+   THEME
+========================= */
+
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #ffffff;
+
+  --surface: #ffffff;
+  --surface-hover: #faf8fc;
+
+  --border: #e5e4e7;
+
+  --code-bg: #f4f3ec;
+
+  --accent: #aa3bff;
+  --accent-hover: #9228e8;
+  --accent-text: #ffffff;
+
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+
+  --danger: #dc2626;
+
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px / 145% var(--sans);
+
+  letter-spacing: 0.18px;
+
+  color: var(--text);
+  background: var(--bg);
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+
+    --surface: #1f2028;
+    --surface-hover: #252630;
+
+    --border: #2e303a;
+
+    --code-bg: #1f2028;
+
+    --accent: #c084fc;
+    --accent-hover: #d8b4fe;
+    --accent-text: #16171d;
+
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+      rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: var(--bg);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* =========================
+   ROOT
+========================= */
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+
+  min-height: 100svh;
+
+  margin: 0 auto;
+
+  border-inline: 1px solid var(--border);
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+main {
+  width: 100%;
+
+  padding: 48px 64px 80px;
+
+  text-align: left;
+}
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading);
+  color: var(--text-h);
+}
+
+h1 {
+  margin: 0 0 48px;
+
+  font-size: 56px;
+  font-weight: 600;
+
+  line-height: 110%;
+  letter-spacing: -1.68px;
+
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 20px;
+
+  font-size: 28px;
+  font-weight: 600;
+
+  line-height: 118%;
+  letter-spacing: -0.24px;
+}
+
+h3 {
+  margin: 0 0 12px;
+
+  font-size: 18px;
+  font-weight: 600;
+}
+
+p {
+  margin: 6px 0;
+}
+
+code {
+  display: inline-flex;
+
+  padding: 4px 8px;
+
+  border-radius: 4px;
+
+  background: var(--code-bg);
+
+  color: var(--text-h);
+
+  font-family: var(--mono);
+  font-size: 15px;
+
+  line-height: 135%;
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  width: 100%;
+
+  margin-bottom: 48px;
+  padding: 28px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--surface);
+
+  box-shadow: var(--shadow);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  color: var(--text-h);
+
+  font-size: 15px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  outline: none;
+
+  background: var(--bg);
+  color: var(--text-h);
+
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+input::placeholder {
+  color: var(--text);
+}
+
+input:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 3px var(--accent-bg);
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  align-self: flex-start;
+
+  padding: 10px 18px;
+
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+
+  background: var(--accent);
+  color: var(--accent-text);
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 150ms ease,
+    border-color 150ms ease,
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+button:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+
+  box-shadow:
+    0 4px 14px var(--accent-bg);
+
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================
+   PRODUCT LIST
+========================= */
+
+section {
+  margin-top: 32px;
+}
+
+section > h2 {
+  padding-bottom: 12px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+
+/* Wrapper generated inside products.map() */
+section > div {
+  margin-top: 24px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  background: var(--surface);
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease;
+}
+
+section > div:hover {
+  border-color: var(--accent-border);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+article {
+  padding: 24px 28px;
+
+  background: var(--surface);
+}
+
+article h2 {
+  margin-bottom: 14px;
+}
+
+article p {
+  font-size: 16px;
+}
+
+
+/* =========================
+   UPDATE FORM
+========================= */
+
+section > div form {
+  margin: 0;
+
+  padding: 20px 28px;
+
+  border: 0;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+
+  background: var(--surface-hover);
+
+  box-shadow: none;
+}
+
+section > div form input {
+  max-width: 300px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  :root {
+    font-size: 16px;
+  }
+
+  main {
+    padding: 36px 32px 64px;
+  }
+
+  h1 {
+    margin-bottom: 36px;
+
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  #root {
+    border-inline: 0;
+  }
+
+  main {
+    padding: 28px 18px 48px;
+  }
+
+  h1 {
+    margin-bottom: 28px;
+
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  article {
+    padding: 20px;
+  }
+
+  section > div form {
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  section > div form input {
+    max-width: none;
+  }
+}
