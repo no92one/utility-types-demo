@@ -3,10 +3,10 @@
     Den här typen är vår "source of truth". 
     Alla andra produkttyper nedan skapas utifrån denna typ.
 */
-export type Product = {
+export interface Product {
     id: number;
     name: string;
-    description: string;
+    description?: string;
     price: number;
     stock: number;
 };
@@ -51,3 +51,8 @@ export type CreateProduct = Omit<Product, "id">;
     2. Partial<...>
 */
 export type UpdateProduct = Partial<Omit<Product, "id">>;
+
+/*
+    Kommenter kommer asp.
+*/
+export type RequiredProduct = Required<Omit<Product, "id">>;
