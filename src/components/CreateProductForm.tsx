@@ -1,11 +1,8 @@
 import { useState } from "react";
 
-type CreateProduct = {
-    name: string;
-    description: string;
-    price: number;
-    stock: number;
-};
+import type {
+    CreateProduct
+} from "../types/product";
 
 type CreateProductFormProps = {
     onCreate: (product: CreateProduct) => void;
@@ -15,7 +12,8 @@ export default function CreateProductForm({
     onCreate
 }: CreateProductFormProps) {
     const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
+    const [description, setDescription] =
+        useState("");
     const [price, setPrice] = useState(0);
     const [stock, setStock] = useState(0);
 
@@ -60,7 +58,9 @@ export default function CreateProductForm({
                     type="text"
                     value={description}
                     onChange={(event) =>
-                        setDescription(event.target.value)
+                        setDescription(
+                            event.target.value
+                        )
                     }
                 />
             </label>
@@ -71,7 +71,9 @@ export default function CreateProductForm({
                     type="number"
                     value={price}
                     onChange={(event) =>
-                        setPrice(Number(event.target.value))
+                        setPrice(
+                            Number(event.target.value)
+                        )
                     }
                 />
             </label>
@@ -82,7 +84,9 @@ export default function CreateProductForm({
                     type="number"
                     value={stock}
                     onChange={(event) =>
-                        setStock(Number(event.target.value))
+                        setStock(
+                            Number(event.target.value)
+                        )
                     }
                 />
             </label>

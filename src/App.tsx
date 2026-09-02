@@ -4,21 +4,11 @@ import ProductCard from "./components/ProductCard";
 import CreateProductForm from "./components/CreateProductForm";
 import UpdateProductForm from "./components/UpdateProductForm";
 
-import type { Product } from "./types/product";
-
-type CreateProduct = {
-  name: string;
-  description: string;
-  price: number;
-  stock: number;
-};
-
-type UpdateProduct = {
-  name?: string;
-  description?: string;
-  price?: number;
-  stock?: number;
-};
+import type {
+  Product,
+  CreateProduct,
+  UpdateProduct
+} from "./types/product";
 
 const initialProducts: Product[] = [
   {

@@ -1,11 +1,8 @@
 import { useState } from "react";
 
-type UpdateProduct = {
-    name?: string;
-    description?: string;
-    price?: number;
-    stock?: number;
-};
+import type {
+    UpdateProduct
+} from "../types/product";
 
 type UpdateProductFormProps = {
     productId: number;
@@ -15,7 +12,6 @@ type UpdateProductFormProps = {
         changes: UpdateProduct
     ) => void;
 };
-
 
 export default function UpdateProductForm({
     productId,

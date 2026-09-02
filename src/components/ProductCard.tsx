@@ -1,16 +1,13 @@
-type ProductCardProps = {
-    id: number;
-    name: string;
-    price: number;
-    stock: number;
-};
+import type {
+    ProductCardData
+} from "../types/product.ts";
 
 export default function ProductCard({
     id,
     name,
     price,
     stock
-}: ProductCardProps) {
+}: ProductCardData) {
     return (
         <article>
             <h2>{name}</h2>
